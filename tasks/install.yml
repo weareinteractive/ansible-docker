@@ -1,5 +1,15 @@
 ---
 
+- name: Installing dependencies
+  apt: >
+    pkg=python-pip
+    state=present
+
+- name: Installing python dependencies
+  pip: >
+    name=docker-py
+    state=present
+
 - name: Adding repository key
   apt_key: >
     url="https://get.docker.io/gpg"
@@ -21,6 +31,7 @@
 - name: Installing Docker
   apt: >
     pkg=lxc-docker
+    state=present
   tags:
     - development
     - docker
