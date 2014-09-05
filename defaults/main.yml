@@ -1,0 +1,9 @@
+---
+# For more information about handlers see:
+# http://www.ansibleworks.com/docs/playbooks.html#handlers-running-operations-on-change
+#
+
+# start on boot
+docker_service_enabled: yes
+# current state: started, stopped
+docker_service_state: started

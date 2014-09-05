@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  roles:
+    - franklinkim.docker
+  vars:
+    docker_service_state: started
+    docker_service_enabled: yes
