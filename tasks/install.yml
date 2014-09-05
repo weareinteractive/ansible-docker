@@ -1,28 +1,25 @@
 ---
 
-- name: Installing packages
-  apt_repository: >
-    repo={{ item }}
-    update_cache=yes
-  with_items: apt_repositories
-  tags:
-    - system
-    - apt
-    - repositories
-
-- name: Add Docker repository key
+- name: Adding repository key
   apt_key: url="https://get.docker.io/gpg" id="A88D21E9"
+  tags:
+    - development
+    - docker
+    - install
 
-- name: Add Docker repository
+- name: Adding repository
   apt_repository: >
     repo: 'deb http://get.docker.io/ubuntu docker main'
     update_cache: yes
+  tags:
+    - development
+    - docker
+    - install
 
-- name: Install Docker
+- name: Installing Docker
   apt: pkg=lxc-docker
+  tags:
+    - development
+    - docker
+    - install
 
-- name: ensure docker is running
-  service: >
-    name: docker
-    enabled: {{ docker_service_enabled }}
-    state: {{ docker_service_state }}
