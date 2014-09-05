@@ -1,7 +1,9 @@
 ---
 
 - name: Adding repository key
-  apt_key: url="https://get.docker.io/gpg" id="A88D21E9"
+  apt_key: >
+    url="https://get.docker.io/gpg"
+    id="A88D21E9"
   tags:
     - development
     - docker
@@ -9,15 +11,16 @@
 
 - name: Adding repository
   apt_repository: >
-    repo: 'deb http://get.docker.io/ubuntu docker main'
-    update_cache: yes
+    repo='deb http://get.docker.io/ubuntu docker main'
+    update_cache=yes
   tags:
     - development
     - docker
     - install
 
 - name: Installing Docker
-  apt: pkg=lxc-docker
+  apt: >
+    pkg=lxc-docker
   tags:
     - development
     - docker
