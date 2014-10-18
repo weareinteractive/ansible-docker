@@ -6,4 +6,4 @@
     - franklinkim.docker
   vars:
     docker_images:
-      - { name: 'ubuntu', tag: '14.04' }
+      - { name: 'ubuntu', tag: 'trusty' }
