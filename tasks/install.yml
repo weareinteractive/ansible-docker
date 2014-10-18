@@ -4,11 +4,19 @@
   apt: >
     pkg=python-pip
     state=present
+  tags:
+    - development
+    - docker
+    - install
 
 - name: Installing python dependencies
   pip: >
     name=docker-py
     state=present
+  tags:
+    - development
+    - docker
+    - install
 
 - name: Adding repository key
   apt_key: >
@@ -30,7 +38,7 @@
 
 - name: Installing Docker
   apt: >
-    pkg=lxc-docker
+    pkg={{ docker_package }}
     state=present
   tags:
     - development

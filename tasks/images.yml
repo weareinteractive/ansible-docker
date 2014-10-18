@@ -1,0 +1,10 @@
+---
+
+- name: Pulling docker images
+  shell: >
+    docker pull "{{ item.name }}:{{ item.tag }}"
+  with_items: docker_images
+  tags:
+    - development
+    - docker
+    - images

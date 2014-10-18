@@ -6,3 +6,6 @@
   vars:
     docker_service_state: started
     docker_service_enabled: yes
+    docker_package: lxc-docker-1.2.0
+    docker_images:
+      - { name: 'ubuntu' tag: '14.04' }
