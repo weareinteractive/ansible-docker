@@ -6,4 +6,4 @@
     - franklinkim.docker
   vars:
     docker_images:
-      - { name: 'ubuntu', tag: 'trusty' }
+      - { name: 'wordpress', tag: '4.0.0' }
