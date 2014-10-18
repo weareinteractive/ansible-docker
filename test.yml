@@ -5,5 +5,6 @@
   roles:
     - franklinkim.docker
   vars:
-    docker_images:
-      - { name: 'wordpress', tag: '4.0.0' }
+    docker_service_state: started
+    docker_service_enabled: yes
+    docker_package: lxc-docker-1.2.0
