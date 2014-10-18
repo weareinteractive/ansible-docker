@@ -1,5 +1,5 @@
 ---
 
 - include: install.yml
-- include: images.yml
 - include: service.yml
+- include: images.yml
