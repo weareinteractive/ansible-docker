@@ -5,6 +5,5 @@
   roles:
     - franklinkim.docker
   vars:
-    docker_package: lxc-docker-1.2.0
     docker_images:
       - { name: 'ubuntu', tag: '14.04' }
