@@ -64,7 +64,7 @@ These are the handlers that are defined in `handlers/main.yml`.
     docker_service_enabled: yes
     docker_package: lxc-docker-1.2.0
     docker_images: 
-      - { name: 'ubuntu' tag: '14.04' }
+      - { name: 'ubuntu', tag: '14.04' }
 ```
 
 ## Testing
