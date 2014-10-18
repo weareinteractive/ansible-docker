@@ -36,7 +36,7 @@
 
 - name: Installing Docker
   apt: >
-    pkg={{ docker_package }}
+    pkg=lxc-docker
     state=present
   tags:
     - development

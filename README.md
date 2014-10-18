@@ -41,8 +41,6 @@ Here is a list of all the default variables for this role, which are also availa
 docker_service_enabled: yes
 # current state: started, stopped
 docker_service_state: started
-# apt package name
-docker_package: lxc-docker
 # list of docker images to pull
 docker_images: []
 ```
