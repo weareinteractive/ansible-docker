@@ -2,7 +2,7 @@
 galaxy_info:
   author: franklin
   company: We Are Interactive
-  description: Installs docker and pulls images
+  description: Installs docker
   min_ansible_version: 1.6
   license: MIT
   #

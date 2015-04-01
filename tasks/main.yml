@@ -1,5 +1,19 @@
 ---
 
 - include: install.yml
+  tags:
+    - development
+    - docker
+    - docker-install
+
+- include: config.yml
+  tags:
+    - development
+    - docker
+    - docker-config
+
 - include: service.yml
-- include: images.yml
+  tags:
+    - development
+    - docker
+    - docker-service

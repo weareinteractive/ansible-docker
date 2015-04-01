@@ -1,44 +1,16 @@
 ---
 
-- name: Installing dependencies
-  apt: >
-    pkg=python-pip
-    state=present
-  tags:
-    - development
-    - docker
-    - install
+- name: Adding APT key
+  apt_key:
+    id: "A88D21E9"
+    url: "https://get.docker.io/gpg"
 
-- name: Installing python dependencies
-  pip: >
-    name=docker-py
-    state=present
-  tags:
-    - development
-    - docker
-    - install
-
-- name: Adding repository key
-  command: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-  tags:
-    - development
-    - docker
-    - install
-
-- name: Adding repository
-  apt_repository: >
-    repo='deb http://get.docker.io/ubuntu docker main'
-    update_cache=yes
-  tags:
-    - development
-    - docker
-    - install
+- name: Adding APT repository
+  apt_repository:
+    repo: 'deb https://get.docker.io/ubuntu docker main'
+    update_cache: yes
 
 - name: Installing Docker
-  apt: >
-    pkg=lxc-docker
-    state=present
-  tags:
-    - development
-    - docker
-    - install
+  apt:
+    name: "{{ docker_package }}"
+    state: present

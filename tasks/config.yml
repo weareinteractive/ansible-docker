@@ -1,0 +1,10 @@
+---
+
+- name: Configuring
+  template:
+    src: etc-default-docker.j2
+    dest: /etc/default/docker
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart docker
