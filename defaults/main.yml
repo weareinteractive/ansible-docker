@@ -2,13 +2,14 @@
 # For more information about handlers see:
 # http://www.ansibleworks.com/docs/playbooks.html#handlers-running-operations-on-change
 #
-# docker_images:
-#   - { name: 'image-name', tag: 'image-tag' }
-#
+# docker_options:
+#   - "--dns 8.8.4.4"
 
+# apt package
+docker_package: lxc-docker-1.5.0
 # start on boot
 docker_service_enabled: yes
 # current state: started, stopped
 docker_service_state: started
-# list of docker images to pull
-docker_images: []
+# docker default options
+docker_options: []

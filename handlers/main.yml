@@ -2,3 +2,4 @@
 
 - name: restart docker
   service: name=docker state=restarted
+  when: docker_service_state != 'stopped'

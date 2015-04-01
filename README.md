@@ -3,10 +3,10 @@
 [![Build Status](https://travis-ci.org/weareinteractive/ansible-docker.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-docker)
 [![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-docker.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-docker)
 
-> `docker` is an [ansible](http://www.ansible.com) role which: 
-> 
+> `docker` is an [ansible](http://www.ansible.com) role which:
+>
 > * installs docker
-> * pulls images
+> * configures docker
 
 ## Installation
 
@@ -16,10 +16,10 @@ Using `ansible-galaxy`:
 $ ansible-galaxy install franklinkim.docker
 ```
 
-Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
+Using `requirements.yml`:
 
 ```
-$ arm install franklinkim.docker
+- src: franklinkim.docker
 ```
 
 Using `git`:
@@ -33,35 +33,36 @@ $ git clone https://github.com/weareinteractive/ansible-docker.git
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
 
 ```
-# docker_images:
-#   - { name: 'image-name', tag: 'image-tag' }
-#
+# docker_options:
+#   - "--dns 8.8.4.4"
 
+# apt package
+docker_package: lxc-docker-1.5.0
 # start on boot
 docker_service_enabled: yes
 # current state: started, stopped
 docker_service_state: started
-# list of docker images to pull
-docker_images: []
+# docker default options
+docker_options: []
 ```
 
 ## Handlers
 
 These are the handlers that are defined in `handlers/main.yml`.
 
-* `restart docker` 
+* `restart docker`
 
 ## Example playbook
 
 ```
 - host: all
-  roles: 
+  roles:
     - franklinkim.docker
   vars:
     docker_service_state: started
     docker_service_enabled: yes
     docker_package: lxc-docker-1.2.0
-    docker_images: 
+    docker_images:
       - { name: 'wordpress', tag: '4.0.0' }
 ```
 
