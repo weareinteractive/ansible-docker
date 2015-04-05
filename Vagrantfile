@@ -8,17 +8,20 @@ Vagrant.configure("2") do |config|
   config.vbguest.no_remote = true
   config.vbguest.auto_update = false
 
-  config.vm.define 'ubuntu1404-amd64' do |instance|
-
-    # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.define 'trusty' do |instance|
     instance.vm.box = 'ubuntu/trusty64'
-
-    # View the documentation for the provider you're using for more
-    # information on available options.
-    config.vm.provision "ansible" do |ansible|
-      ansible.playbook = "test.yml"
-      ansible.verbose = 'vv'
-      ansible.sudo = true
-    end
   end
+
+  config.vm.define 'precise' do |instance|
+    instance.vm.box = 'ubuntu/precise64'
+  end
+
+  # View the documentation for the provider you're using for more
+  # information on available options.
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "test.yml"
+    ansible.verbose = 'vv'
+    ansible.sudo = true
+  end
+
 end
