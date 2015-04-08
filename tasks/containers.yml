@@ -1,0 +1,19 @@
+---
+
+- name: Managing Docker containers
+  docker:
+    count: "{{ item.count | default(omit) }}"
+    command: "{{ item.command | default(omit) }}"
+    env: "{{ item.env | default(omit) }}"
+    expose: "{{ item.expose | default(omit) }}"
+    hostname: "{{ item.hostname | default(omit) }}"
+    image: "{{ item.image }}"
+    links: "{{ item.links | default(omit) }}"
+    name: "{{ item.name | default(omit) }}"
+    ports: "{{ item.ports | default(omit) }}"
+    privileged: "{{ item.privileged | default(omit) }}"
+    pull: "{{ item.pull | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+    volumes: "{{ item.volumes | default(omit) }}"
+    volumes_from: "{{ item.volumes_from | default(omit) }}"
+  with_items: docker_containers

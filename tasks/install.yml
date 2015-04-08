@@ -1,5 +1,12 @@
 ---
 
+- name: Installing APT packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+
 - name: Adding APT key
   apt_key:
     id: "A88D21E9"
@@ -10,7 +17,19 @@
     repo: 'deb https://get.docker.io/ubuntu docker main'
     update_cache: yes
 
-- name: Installing Docker
+- name: Installing APT packages
   apt:
-    name: "{{ docker_package }}"
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-setuptools
+    - "{{ docker_package }}"
+
+- name: Installing Ansible dependencies
+  easy_install:
+    name: pip
+
+- name: Installing Ansible PIP dependencies
+  pip:
+    name: docker-py
     state: present
