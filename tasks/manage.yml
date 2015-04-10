@@ -1,6 +1,18 @@
 ---
 
-- name: Managing Docker containers
+- name: Managing images
+  docker_image:
+    name: "{{ item.name if item.name is defined else item }}"
+    nocache: "{{ item.nocache | default(omit) }}"
+    path: "{{ item.path | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+    tag: "{{ item.tag | default(omit) }}"
+    timeout: "{{ item.timeout | default(omit) }}"
+  with_items: docker_images
+  register: docker_images_stat
+  failed_when: docker_images_stat.msg and "Image builded:" not in docker_images_stat.msg
+
+- name: Managing containers
   docker:
     count: "{{ item.count | default(omit) }}"
     command: "{{ item.command | default(omit) }}"
