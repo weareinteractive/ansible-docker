@@ -1,12 +1,15 @@
 # Ansible Docker Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-docker.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-docker)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-docker.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-docker)
+[![Build Status](https://img.shields.io/travis/weareinteractive/ansible-docker.svg)](https://travis-ci.org/weareinteractive/ansible-docker)
+[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.supervisor-blue.svg)](https://galaxy.ansible.com/list#/roles/)
+[![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-docker.svg)](https://github.com/weareinteractive/ansible-docker)
+[![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-docker.svg)](https://github.com/weareinteractive/ansible-docker)
 
 > `docker` is an [ansible](http://www.ansible.com) role which:
 >
 > * installs docker
 > * configures docker
+> * adds logrotate for docker container logs
 
 ## Installation
 
@@ -27,6 +30,10 @@ Using `git`:
 ```
 $ git clone https://github.com/weareinteractive/ansible-docker.git
 ```
+
+## Dependencies
+
+* Ansible 1.9
 
 ## Variables
 

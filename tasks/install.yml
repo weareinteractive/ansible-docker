@@ -7,10 +7,22 @@
 
 - name: Adding APT repository
   apt_repository:
-    repo: 'deb https://get.docker.io/ubuntu docker main'
+    repo: 'deb http://get.docker.io/ubuntu docker main'
     update_cache: yes
 
-- name: Installing Docker
+- name: Installing APT packages
   apt:
-    name: "{{ docker_package }}"
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-setuptools
+    - "{{ docker_package }}"
+
+- name: Installing Ansible dependencies
+  easy_install:
+    name: pip
+
+- name: Installing Ansible PIP dependencies
+  pip:
+    name: docker-py
     state: present
