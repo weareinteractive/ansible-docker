@@ -2,12 +2,12 @@
 
 - name: Adding APT key
   apt_key:
-    id: "A88D21E9"
-    url: "http://get.docker.io/gpg"
+    id: "36A1D7869245C8950F966E92D8576A8BA88D21E9"
+    keyserver: "hkp://p80.pool.sks-keyservers.net:80"
 
 - name: Adding APT repository
   apt_repository:
-    repo: 'deb http://get.docker.io/ubuntu docker main'
+    repo: 'deb https://get.docker.com/ubuntu docker main'
     update_cache: yes
 
 - name: Installing APT packages
