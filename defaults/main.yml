@@ -22,7 +22,7 @@
 #
 
 # apt package
-docker_package: lxc-docker-1.5.0
+docker_package: docker-engine
 # start on boot
 docker_service_enabled: yes
 # current state: started, stopped

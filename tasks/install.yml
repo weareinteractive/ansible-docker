@@ -2,17 +2,20 @@
 
 - name: Installing dependencies
   apt:
-    pkg: apt-transport-https
+    pkg: "{{ item }}"
     state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
 
 - name: Adding APT key
   apt_key:
-    id: "36A1D7869245C8950F966E92D8576A8BA88D21E9"
+    id: "58118E89F3A912897C070ADBF76221572C52609D"
     keyserver: "hkp://p80.pool.sks-keyservers.net:80"
 
 - name: Adding APT repository
   apt_repository:
-    repo: 'deb https://get.docker.com/ubuntu docker main'
+    repo: "deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release }} main"
     update_cache: yes
 
 - name: Installing APT packages
