@@ -1,7 +1,7 @@
 # Ansible Docker Role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-docker.svg)](https://travis-ci.org/weareinteractive/ansible-docker)
-[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.supervisor-blue.svg)](https://galaxy.ansible.com/list#/roles/)
+[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.docker-blue.svg)](https://galaxy.ansible.com/list#/roles/3275)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-docker.svg)](https://github.com/weareinteractive/ansible-docker)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-docker.svg)](https://github.com/weareinteractive/ansible-docker)
 
@@ -28,7 +28,7 @@ Using `requirements.yml`:
 Using `git`:
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-docker.git
+$ git clone https://github.com/weareinteractive/ansible-docker.git franklinkim.docker
 ```
 
 ## Dependencies
@@ -42,15 +42,35 @@ Here is a list of all the default variables for this role, which are also availa
 ```
 # docker_options:
 #   - "--dns 8.8.4.4"
+# docker_containers:
+#   - image: foo/bar
+#     count: ...
+#     command: ...
+#     env: ...
+#     expose: ...
+#     hostname: ...
+#     links: ...
+#     name: ...
+#     ports: ...
+#     privileged: ...
+#     pull: ...
+#     state: ...
+#     volumes: ...
+#     volumes_from: ...
+#
 
 # apt package
-docker_package: lxc-docker-1.5.0
+docker_package: docker-engine
 # start on boot
 docker_service_enabled: yes
 # current state: started, stopped
 docker_service_state: started
 # docker default options
 docker_options: []
+# list of images (http://docs.ansible.com/docker_image_module.html)
+docker_images: []
+# list of containers (http://docs.ansible.com/docker_module.html)
+docker_containers: []
 ```
 
 ## Handlers
@@ -62,15 +82,13 @@ These are the handlers that are defined in `handlers/main.yml`.
 ## Example playbook
 
 ```
-- host: all
+- hosts: all
+  sudo: yes
   roles:
     - franklinkim.docker
   vars:
-    docker_service_state: started
-    docker_service_enabled: yes
-    docker_package: lxc-docker-1.2.0
-    docker_images:
-      - { name: 'wordpress', tag: '4.0.0' }
+    docker_options:
+      - "--bip=10.0.3.1/24"
 ```
 
 ## Testing
