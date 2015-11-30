@@ -1,0 +1,17 @@
+---
+- name: 'Docker > Suse > installing dependencies'
+  zypper:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ca-certificates
+
+- name: 'Docker > Suse > installing zypper packages'
+  zypper:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-setuptools
+    - docker
+
+
