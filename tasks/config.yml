@@ -6,7 +6,7 @@
     dest: /etc/default/docker
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify: restart docker
 
 - name: Configuring logrotate
@@ -15,4 +15,4 @@
     dest: /etc/logrotate.d/docker
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
