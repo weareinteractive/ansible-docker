@@ -6,11 +6,11 @@
 - include: install_suse.yml
   when: ansible_distribution == 'Suse' or ansible_distribution == 'openSUSE'
 
-- name: 'Docker > installing Ansible dependencies'
+- name: 'Installing Ansible dependencies'
   easy_install:
     name: pip
 
-- name: 'Docker > installing Ansible PIP dependencies'
+- name: 'Installing Ansible PIP dependencies'
   pip:
     name: docker-py
     state: present
