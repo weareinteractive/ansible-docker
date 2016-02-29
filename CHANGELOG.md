@@ -1,3 +1,13 @@
+<a name="1.6.1"></a>
+### 1.6.1 (2016-02-29)
+
+
+#### Features
+
+*   don't use bare variable names ([026b3f98](https://github.com/weareinteractive/ansible-docker/commit/026b3f988217ed6c74efbe6c362295fc62b1efdf))
+
+
+
 <a name="1.6.0"></a>
 ## 1.6.0 (2015-11-30)
 
