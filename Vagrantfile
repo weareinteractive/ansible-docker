@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: "sudo apt-get update"
-  config.vm.provision "shell", inline: "sudo apt-get install python"
+  config.vm.provision "shell", inline: "sudo apt-get install -y python"
 
   # View the documentation for the provider you're using for more
   # information on available options.
