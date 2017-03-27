@@ -33,7 +33,7 @@ $ git clone https://github.com/weareinteractive/ansible-docker.git franklinkim.d
 
 ## Dependencies
 
-* Ansible >= 1.9
+* Ansible >= 2.0
 
 ## Variables
 
@@ -44,6 +44,10 @@ Here is a list of all the default variables for this role, which are also availa
 # For more information about handlers see:
 # http://www.ansibleworks.com/docs/playbooks.html#handlers-running-operations-on-change
 #
+# pip dependencies
+# docker_pip_dependencies:
+#   - name: docker-py
+#     version: 1.9.0
 # docker_options:
 #   - "--dns 8.8.4.4"
 # docker_containers:
@@ -65,6 +69,9 @@ Here is a list of all the default variables for this role, which are also availa
 
 # apt package
 docker_package: docker-engine
+# pip dependencies
+docker_pip_dependencies:
+ - docker-py
 # start on boot
 docker_service_enabled: yes
 # current state: started, stopped
@@ -100,25 +107,29 @@ This is an example playbook:
 ---
 
 - hosts: all
-  sudo: yes
+  become: yes
   roles:
     - franklinkim.docker
   vars:
     docker_options:
       - "--bip=10.0.3.1/24"
+    docker_pip_dependencies:
+      - name: docker-py
+        version: 1.9.0
 
 ```
+
 
 ## Testing
 
 ```shell
 $ git clone https://github.com/weareinteractive/ansible-docker.git
 $ cd ansible-docker
-$ vagrant up
+$ make test
 ```
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality.
+In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality.
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
