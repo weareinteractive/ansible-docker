@@ -2,6 +2,10 @@
 # For more information about handlers see:
 # http://www.ansibleworks.com/docs/playbooks.html#handlers-running-operations-on-change
 #
+# pip dependencies
+# docker_pip_dependencies:
+#   - name: docker-py
+#     version: 1.9.0
 # docker_options:
 #   - "--dns 8.8.4.4"
 # docker_containers:
@@ -23,6 +27,9 @@
 
 # apt package
 docker_package: docker-engine
+# pip dependencies
+docker_pip_dependencies:
+ - docker-py
 # start on boot
 docker_service_enabled: yes
 # current state: started, stopped
