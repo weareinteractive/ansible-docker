@@ -12,5 +12,7 @@
 
 - name: 'Installing Ansible PIP dependencies'
   pip:
-    name: docker-py
+    name: "{{ item.name | default(item) }}"
     state: present
+    version: "{{ item.version | default(omit) }}"
+  with_items: "{{ docker_pip_dependencies }}"

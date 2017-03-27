@@ -13,7 +13,7 @@
   failed_when: docker_images_stat.msg and "Image builded:" not in docker_images_stat.msg
 
 - name: Managing containers
-  docker:
+  docker_container:
     count: "{{ item.count | default(omit) }}"
     command: "{{ item.command | default(omit) }}"
     env: "{{ item.env | default(omit) }}"
