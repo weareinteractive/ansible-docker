@@ -1,3 +1,16 @@
+<a name="1.7.0"></a>
+## 1.7.0 (2017-03-27)
+
+
+#### Features
+
+*   update meta info to use ansible 2.0 ([62e6301a](https://github.com/weareinteractive/ansible-docker/commit/62e6301a485678eec365a532d99c515502072472))
+*   add docker_pip_dependencies ([3abd25f6](https://github.com/weareinteractive/ansible-docker/commit/3abd25f60063c4a1fe0b1867422c9f3df8934433))
+*   use docker_container instead obsolete docker ([cd0b0974](https://github.com/weareinteractive/ansible-docker/commit/cd0b0974c301b23c94e0408e8b903cd2737510af))
+*   update tests sudo to become ([bff2dc35](https://github.com/weareinteractive/ansible-docker/commit/bff2dc3513fb4f548da207d238f421edec9f1521))
+
+
+
 <a name="1.6.1"></a>
 ### 1.6.1 (2016-02-29)
 
