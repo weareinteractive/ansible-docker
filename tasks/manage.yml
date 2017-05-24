@@ -20,6 +20,7 @@
     expose: "{{ item.expose | default(omit) }}"
     hostname: "{{ item.hostname | default(omit) }}"
     image: "{{ item.image }}"
+    labels: "{{ item.labels | default(omit) }}"
     links: "{{ item.links | default(omit) }}"
     name: "{{ item.name | default(omit) }}"
     ports: "{{ item.ports | default(omit) }}"
