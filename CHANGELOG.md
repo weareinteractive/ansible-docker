@@ -1,3 +1,13 @@
+<a name="1.8.0"></a>
+## 1.8.0 (2017-05-26)
+
+
+#### Features
+
+*   support container labels ([29441a28](https://github.com/weareinteractive/ansible-docker/commit/29441a28a48518afb7def41e05f6c83dde1ef4db))
+
+
+
 <a name="1.7.0"></a>
 ## 1.7.0 (2017-03-27)
 
