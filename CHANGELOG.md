@@ -1,3 +1,13 @@
+<a name="1.9.0"></a>
+## 1.9.0 (2017-06-21)
+
+
+#### Features
+
+*   add centos support ([45cef76d](https://github.com/weareinteractive/ansible-docker/commit/45cef76daa06970fe16ee8f357dd9f5c87c43071))
+
+
+
 <a name="1.8.0"></a>
 ## 1.8.0 (2017-05-26)
 
