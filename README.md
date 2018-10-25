@@ -11,6 +11,10 @@
 > * configures docker
 > * adds logrotate for docker container logs
 
+**Note:**
+
+> Since Ansible Galaxy switched all role names to the organization name, this role has moved from `franklinkim.docker` to `weareinteractive.docker`!
+
 ## Installation
 
 Using `ansible-galaxy`:
