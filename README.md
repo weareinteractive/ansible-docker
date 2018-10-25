@@ -1,11 +1,11 @@
-# Ansible franklinkim.docker role
+# Ansible weareinteractive.docker role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-docker.svg)](https://travis-ci.org/weareinteractive/ansible-docker)
-[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.docker-blue.svg)](https://galaxy.ansible.com/list#/roles/3275)
+[![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.docker-blue.svg)](https://galaxy.ansible.com/list#/roles/3275)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-docker.svg)](https://github.com/weareinteractive/ansible-docker)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-docker.svg)](https://github.com/weareinteractive/ansible-docker)
 
-> `franklinkim.docker` is an [Ansible](http://www.ansible.com) role which:
+> `weareinteractive.docker` is an [Ansible](http://www.ansible.com) role which:
 >
 > * installs docker
 > * configures docker
@@ -16,19 +16,19 @@
 Using `ansible-galaxy`:
 
 ```shell
-$ ansible-galaxy install franklinkim.docker
+$ ansible-galaxy install weareinteractive.docker
 ```
 
 Using `requirements.yml`:
 
 ```yaml
-- src: franklinkim.docker
+- src: weareinteractive.docker
 ```
 
 Using `git`:
 
 ```shell
-$ git clone https://github.com/weareinteractive/ansible-docker.git franklinkim.docker
+$ git clone https://github.com/weareinteractive/ansible-docker.git weareinteractive.docker
 ```
 
 ## Dependencies
@@ -110,7 +110,7 @@ This is an example playbook:
 - hosts: all
   become: yes
   roles:
-    - franklinkim.docker
+    - weareinteractive.docker
   vars:
     docker_options:
       - "--bip=10.0.3.1/24"

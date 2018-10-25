@@ -1,27 +1,27 @@
 ---
 
-- include: config.yml
+- import_tasks: config.yml
   tags:
     - development
     - docker
     - config
     - docker-config
 
-- include: install.yml
+- import_tasks: install.yml
   tags:
     - development
     - docker
     - install
     - docker-install
 
-- include: manage.yml
+- import_tasks: manage.yml
   tags:
     - development
     - docker
     - manage
     - docker-manage
 
-- include: service.yml
+- import_tasks: service.yml
   tags:
     - development
     - docker

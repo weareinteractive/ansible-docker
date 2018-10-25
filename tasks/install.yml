@@ -1,12 +1,12 @@
 ---
 
-- include: install_ubuntu.yml
+- import_tasks: install_ubuntu.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- include: install_suse.yml
+- import_tasks: install_suse.yml
   when: ansible_distribution == 'Suse' or ansible_distribution == 'openSUSE'
 
-- include: install_centos.yml
+- import_tasks: install_centos.yml
   when: ansible_distribution == 'CentOS'
 
 - name: 'Installing Ansible dependencies'
