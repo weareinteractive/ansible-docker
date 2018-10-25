@@ -1,3 +1,14 @@
+<a name="1.10.0"></a>
+## 1.10.0 (2018-10-25)
+
+
+#### Features
+
+*   update min ansible version ([cd3a797f](https://github.com/weareinteractive/ansible-docker/commit/cd3a797f3598c36b53e6acb50e740593f65b926e))
+*   switch galaxy namespace ([a8dd80a4](https://github.com/weareinteractive/ansible-docker/commit/a8dd80a4bed697b8efa43bbaa4e2552406738197))
+
+
+
 <a name="1.9.0"></a>
 ## 1.9.0 (2017-06-21)
 
