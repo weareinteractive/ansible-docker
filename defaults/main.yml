@@ -27,7 +27,7 @@
 #
 
 # apt package
-docker_package: docker-engine
+docker_package: docker-ce
 # pip dependencies
 docker_pip_dependencies:
  - docker-py

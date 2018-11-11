@@ -1,0 +1,23 @@
+---
+
+- name: Installing dependencies
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - lvm2
+      - yum-utils
+      - epel-release
+      - device-mapper-persistent-data
+
+
+- name: Adding YUM repository
+  yum_repository:
+    name: docker-ce-stable
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/centos/gpg
+

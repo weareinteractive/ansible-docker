@@ -1,19 +1,24 @@
 ---
 
-- import_tasks: install_ubuntu.yml
+- import_tasks: install/ubuntu.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- import_tasks: install_suse.yml
+- import_tasks: install/suse.yml
   when: ansible_distribution == 'Suse' or ansible_distribution == 'openSUSE'
 
-- import_tasks: install_centos.yml
+- import_tasks: install/centos.yml
   when: ansible_distribution == 'CentOS'
 
-- name: 'Installing Ansible dependencies'
-  easy_install:
-    name: pip
+- name: Installing packages
+  package:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - python-pip
+      - "{{ docker_package }}"
 
-- name: 'Installing Ansible PIP dependencies'
+- name: Installing Ansible PIP dependencies
   pip:
     name: "{{ item.name | default(item) }}"
     state: present
