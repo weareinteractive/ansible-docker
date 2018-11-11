@@ -73,7 +73,7 @@ Here is a list of all the default variables for this role, which are also availa
 #
 
 # apt package
-docker_package: docker-engine
+docker_package: docker-ce
 # pip dependencies
 docker_pip_dependencies:
  - docker-py
