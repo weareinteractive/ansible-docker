@@ -1,3 +1,13 @@
+<a name="1.11.0"></a>
+## 1.11.0 (2018-11-11)
+
+
+#### Features
+
+*   update installation ([3f98f4a8](https://github.com/weareinteractive/ansible-docker/commit/3f98f4a8f9d9e9b71b93d5bd1efa575a221e57f2))
+
+
+
 <a name="1.10.0"></a>
 ## 1.10.0 (2018-10-25)
 
