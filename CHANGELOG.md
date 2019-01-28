@@ -1,3 +1,13 @@
+<a name="1.11.1"></a>
+### 1.11.1 (2019-01-28)
+
+
+#### Bug Fixes
+
+*   fix debian distribution release name ([06b78d47](https://github.com/weareinteractive/ansible-docker/commit/06b78d47b3f509b790940ed71bc59d02a3b3aef6))
+
+
+
 <a name="1.11.0"></a>
 ## 1.11.0 (2018-11-11)
 
