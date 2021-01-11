@@ -41,3 +41,9 @@ docker_options: []
 docker_images: []
 # list of containers (http://docs.ansible.com/docker_module.html)
 docker_containers: []
+# centos docker ce private repository url
+centos_docker_ce_private_repo: 'https://download.docker.com/linux/centos/7/$basearch/stable'
+centos_docker_ce_private_repo_gpg: 'https://download.docker.com/linux/centos/gpg'
+# debian docker ce private repository url
+debian_docker_ce_private_repo: 'https://download.docker.com/linux/{{ ansible_distribution | lower }}'
+debian_docker_ce_private_repo_gpg: 'https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg'

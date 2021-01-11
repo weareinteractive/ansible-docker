@@ -20,9 +20,9 @@
 - name: Adding APT key
   apt_key:
     id: 0EBFCD88
-    url: https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
+    url: {{ debian_docker_ce_private_repo_gpg }}
 
 - name: Adding APT repository
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+    repo: "deb [arch=amd64] {{ debian_docker_ce_private_repo }} {{ ansible_distribution_release }} stable"
     update_cache: yes
