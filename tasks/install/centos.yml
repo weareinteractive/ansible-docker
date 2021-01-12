@@ -16,8 +16,8 @@
   yum_repository:
     name: docker-ce-stable
     description: Docker CE Stable - $basearch
-    baseurl: '{{ centos_docker_ce_private_repo }}'
+    baseurl: "{{ centos_docker_ce_private_repo }}"
     enabled: yes
     gpgcheck: yes
-    gpgkey: '{{ centos_docker_ce_private_repo_gpg }}'
+    gpgkey: "{{ centos_docker_ce_private_repo_gpg }}"
 

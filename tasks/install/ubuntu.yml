@@ -20,7 +20,7 @@
 - name: Adding APT key
   apt_key:
     id: 0EBFCD88
-    url: {{ debian_docker_ce_private_repo_gpg }}
+    url: "{{ debian_docker_ce_private_repo_gpg }}"
 
 - name: Adding APT repository
   apt_repository:
