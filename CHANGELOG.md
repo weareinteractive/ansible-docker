@@ -1,3 +1,11 @@
+<a name="1.12.O"></a>
+### 1.12.0 (2021-01-XX)
+
+
+#### Features
+
+*   configured docker ce epository url as variables to allow use of a local mirror or a private repo. 
+
 <a name="1.11.1"></a>
 ### 1.11.1 (2019-01-28)
 
